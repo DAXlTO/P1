@@ -1,57 +1,195 @@
-* {
-  box-sizing: border-box;
-}
+@use '../variables';
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+body, html {
   margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  padding: 0;
+  font-family: variables.$font-family-sans-serif;
+  color: #003b4a;
+  background-color: variables.$background-main-color
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
+header {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background-color: white;
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
-  }
-}
-
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidth) {
+  p {
+    margin: auto;
     font-size: 36px;
+    font-weight: bold;
+    color: $color-contrast;
   }
 }
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+main {
+  margin-top: 50px;
+  display: flex;
+  width: 100%; 
+}
+
+i {
+  margin-right: 5px;
+}
+
+#logo {
+  max-height: 40px;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.contenido-principal{
+  margin: 15px;
+}
+
+.texto-inicial{
+  margin-top: 40px;
+  font-size: 24px;
+}
+
+.titulo-texto{
+  color: #003B4A;
+  font-weight: 900;
+  font-size: 28px;
+  text-decoration: none;
+  font-family: 'Noto Serif', serif;
+
+  &.monumento {
+    font-weight: 700;
+    font-size: 20px;
+    color: variables.$color-contrast;
+  }
+}
+
+.texto {
+  font-size: 20px;
+
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+.titular-lateral{
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-weight: 900;
+  font-size: 36px;
+}
+
+.cont-lateral {
+  margin-right: 2.5%;
+  background-color: white;
+  width: auto;
+  margin-bottom: 30px;
+  border: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.imagen-entrada{
+  position: relative;
+  display: inline-block;
+}
+
+.etiqueta-entrada{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 10;
+}
+
+.etiqueta-entrada:hover{
+  color: variables.$color-contrast;
+}
+
+.titulo-entrada{
+  margin-left: 25px;
+}
+
+.titular-entrada-principal{
+  font-weight: 900;
+  font-size: 54px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Noto Serif', serif;
+}
+
+.boton-entrada {
+  background-color: #003B4A;
+  color: white;
+  border: none;
+  padding: 8 10;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+.entrada-principal{
+  width: 50%;
+  margin-left: 12.5%;
+  margin-right: 5%;
+  background-color: white;
+  margin-bottom: 100px;
+}
+
+
+
+.imagenes-monumentos{
+  width: 20%;
+  margin-right: 12.5%;
+}
+
+.entrada-cabecera{
+  margin: 20px;
+  background-color: #E5E1FE;
+  box-decoration-break: clone;
+}
+
+@media (1px <= width <= 870px) {
+    header {
+      padding: 0 10;
+  }
+
+  main {
+    display: block;
+  }
+  
+  #logo {
+      margin-left: 10px;
+  }
+
+  .cont-lateral{
+      margin-left: 2.5%;
+      margin-top: 40px;
+      width: auto;
+  }
+
+  .general-entrada{
+      display: grid;
+      width: 95%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+  }
+
+  .entrada-principal{
+      width: 100%;
+      margin-left: auto;
+  }
+  
+  .imagen-entrada{
+    width: 100%;
+  }
+
+  .imagenes-monumentos {
+      width: auto;
+      margin-right: auto;
+  }
+
+  .titular-lateral{
+    margin-left: 2.5%;
+  }
 }
